@@ -9,8 +9,7 @@ if(isset($_GET["status"])){
 	$status = $_GET["status"];
 	
 	try{
-		$led = new Led("\\\\.\\COM10", 13);
-		//$led->Conectar();
+		$led = new Led(PORT, PIN);
 		switch($status){
 			case "on":
 				$led->Encender();
@@ -31,6 +30,7 @@ if(isset($_GET["status"])){
 <html>
 	<head>
 		<title>Control de Arduino</title>
+		<meta charset="UTF-8">
 	</head>
 	<body>
 		<h1>Control de Arduino</h1>
