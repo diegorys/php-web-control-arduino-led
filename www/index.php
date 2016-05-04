@@ -10,15 +10,16 @@ if(isset($_GET["status"])){
 	
 	try{
 		$led = new Led(PORT, PIN);
+		$led->conectar();
 		switch($status){
 			case "on":
-				$led->Encender();
+				$led->encender();
 				break;
 			case "off":
-				$led->Apagar();
+				$led->apagar();
 				break;
 		}
-		$led->Desconectar();
+		$led->desconectar();
 	}catch(Exception $e){
 		echo $e->getMessage();
 		$status = "disconnect";

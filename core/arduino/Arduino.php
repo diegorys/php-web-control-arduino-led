@@ -34,7 +34,7 @@ class Arduino{
 	/**
 	 * Abre el puerto.
 	 */
-	public function Conectar(){		
+	public function conectar(){		
 		//mode: BAUD=9600 PARITY=N data=8 stop=1 xon=off`;
 		
 		//Abrimos el puerto (para mayores de 9: "\\\\.\\COM10");
@@ -49,14 +49,14 @@ class Arduino{
 	 * Escribe una orden en un puerto.
 	 * @param string $orden: orden a escribir.
 	 */
-	public function Escribir($orden){
+	public function escribir($orden){
 		fputs ($this->manejador, $orden);
 	}
 	
 	/**
 	 * Cierra el puerto.
 	 */
-	public function Desconectar(){
+	public function desconectar(){
 		fclose ($this->fp);
 	}
 	

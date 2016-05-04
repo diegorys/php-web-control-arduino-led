@@ -31,15 +31,15 @@ class Led extends Arduino{
 	/**
 	 * Enciende el led.
 	 */
-	public function Encender(){
-		parent::Escribir("1");
+	public function encender(){
+		parent::Escribir("2");
 	}
 	
 	/**
 	 * Apaga el led.
 	 */
-	public function Apagar(){
-		parent::Escribir("0");
+	public function apagar(){
+		parent::Escribir("1");
 	}
 	
 	/***************************** FUNCIONES PROTEGIDAS ****************************/

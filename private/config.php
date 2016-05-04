@@ -7,7 +7,8 @@
 
 	define('PATH_CORE',			$base_path.'core/');
 	define('PATH_PUBLIC',		$base_path.'www/');
-	define('PORT', "\\\\.\\COM10");
+	//define('PORT', "\\\\.\\COM10");
+	define('PORT', "\\\\.\\COM9");
 	define('PIN', 13);
 
 ?>
