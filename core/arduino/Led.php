@@ -48,5 +48,3 @@ class Led extends Arduino{
 	
 
 }
-
-?>
