@@ -1,5 +1,7 @@
 <?php
 
+namespace Arduino;
+
 /**
  * Control de un objeto de Arduino.
  */
@@ -25,7 +27,7 @@ class Arduino{
 	 * Constructor que abre un puerto.
 	 * @param string $puerto: nombre del puerto a abrir.
 	 */
-	public function Arduino($puerto) {
+	public function __construct($puerto) {
 		$this->puerto = $puerto;	
 	}
 		
@@ -41,7 +43,7 @@ class Arduino{
 		$this->manejador = fopen ($this->puerto, "w+");
 		
 		if (!$this->manejador) {
-			throw new Exception("No se ha encontrado ninguna placa conectada al puerto ".$this->puerto);
+			throw new \Exception("No se ha encontrado ninguna placa conectada al puerto ".$this->puerto);
 		}
 	}
 	
@@ -57,7 +59,7 @@ class Arduino{
 	 * Cierra el puerto.
 	 */
 	public function desconectar(){
-		fclose ($this->fp);
+		fclose ($this->manejador);
 	}
 	
 	/***************************** FUNCIONES PROTEGIDAS ****************************/

@@ -1,6 +1,8 @@
 <?php
 
-require_once PATH_CORE.'arduino/Arduino.php';
+namespace Arduino;
+
+use Arduino\Arduino;
 
 /**
  * Control de un led.
@@ -21,9 +23,10 @@ class Led extends Arduino{
 	 * Constructor que abre un puerto.
 	 * @param string $puerto: nombre del puerto a abrir.
 	 */
-	public function Led($puerto, $pin) {
-		parent::Arduino($puerto);	
+	public function __construct($puerto, $pin) {
+		parent::__construct($puerto);	
 		$this->pin = $pin;
+		parent::escribir($this->pin);
 	}
 		
 	/****************************** FUNCIONES PÚBLICAS *****************************/
@@ -32,19 +35,14 @@ class Led extends Arduino{
 	 * Enciende el led.
 	 */
 	public function encender(){
-		parent::Escribir("2");
+		parent::escribir("101");
 	}
 	
 	/**
 	 * Apaga el led.
 	 */
 	public function apagar(){
-		parent::Escribir("1");
+		parent::escribir("100");
 	}
-	
-	/***************************** FUNCIONES PROTEGIDAS ****************************/
-	
-	/****************************** FUNCIONES PRIVADAS *****************************/
-	
 
 }
