@@ -26,7 +26,6 @@ class Led extends Arduino{
 	public function __construct($puerto, $pin) {
 		parent::__construct($puerto);	
 		$this->pin = $pin;
-		parent::escribir($this->pin);
 	}
 		
 	/****************************** FUNCIONES PÚBLICAS *****************************/
